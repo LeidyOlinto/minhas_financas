@@ -1,10 +1,283 @@
 <!DOCTYPE html>
+<html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
     <title>
         Comtrole financeiro
     </title>
     <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .form-square {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form-square .field-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 20px 0px 20px;
+    }
+
+    .form-square button {
+        margin-top: 19.78px;
+        background: #333;
+        color: white;
+        margin-left: 20px;
+        margin-right: 20px;
+        line-height: 22px;
+        margin: 28px;
+
+    }
+
+
+    .form-square input,
+    .form-square select {
+        border: 1px solid #97979797;
+        border-radius: 4px;
+        height: 32px;
+    }
+
+    .form-square label {
+        margin-bottom: 2px;
+    }
+
+    .form-square h1 {
+        display: none;
+
+    }
+
+    .extrato-de-transacoes {
+        padding-bottom: 20px;
+        padding-top: 7px;
+        padding-right: 20px;
+        width: 100%;
+        
+    }
+
+    .menu div {
+        width: 33px;
+        height: 4px;
+        background-color: #333;
+        margin: 4px 0;
+
+    }
+
+    .aba {
+        padding-right: 27px;
+    }
+
+    .aba ul {
+        list-style-type: none;
+        background-color: #333;
+        color: white;
+        position: fixed;
+        height: 100%;
+        width: 85.4%;
+        right: 0px;
+        top: 0px;
+        margin: 0px;
+        padding: 20px 0;
+        font-size: 16px;
+        display: none;
+        z-index: 2;
+    }
+
+    .aba ul li:nth-child(1) {
+        text-align: left;
+    }
+
+    .aba ul li {
+        text-align: right;
+        margin: 7px 0;
+        padding: 0 20px;
+
+    }
+
+    .aba ul li:hover {
+        background-color: #c4c4c4;
+        color: #333;
+    }
+
+    .aba ul li:nth-child(1) {
+        background-color: #333;
+        color: white;
+    }
+
+    .aba:hover ul {
+        display: block;
+    }
+
+    .botoesdesk {
+        display: none;
+    }
+    .tabela-extrato-de-transacoes
+{
+    width: 680px;
+    padding-right: 0px;
+
+}
+
+    @media screen and (min-width: 768px) {
+        .form-square h1 {
+            display: block;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .aba {
+            padding-right: 20px;
+        }
+
+        .aba ul {
+            width: 32%;
+        }
+
+        .form-square .field-wrapper {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+
+        }
+
+        .form-square .form-field {
+            margin-top: 0px;
+        }
+
+        .field-small {
+            width: calc(20% - 30px);
+
+        }
+
+        .field-big {
+            width: calc(60% - 60px);
+
+        }
+
+        .form-square {
+            border: 1px solid black;
+            margin: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            width: calc(100% - 40px);
+        }
+
+        .form-square button {
+            width: 200px;
+            height: 32px;
+        }
+
+        .linha-01 {
+            display: none;
+        }
+
+        .botoesdesk {
+            display: none;
+        }
+
+        .tabela-extrato-de-transacoes {
+            width: 100%;
+            padding-right: 10px;
+        }
+
+    }
+
+    @media screen and (min-width: 1112px) {
+        .conteudo-central {
+            display: flex;
+            padding-left: 200px;
+
+
+        }
+
+        .form-square .field-wrapper {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+
+        }
+
+        .form-square .form-field {
+            margin: 0px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .form-square button {
+            width: 100%;
+            margin: 0px;
+            margin-top: 20px;
+        }
+
+        .form-square {
+            width: 400px;
+            padding: 20px;
+
+
+        }
+
+        .aba ul {
+            display: none;
+        }
+
+        .botoesdesk {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            background-color: white;
+            align-items: center;
+        }
+
+
+        .botoesdesk a,
+        .pipe {
+            padding: 8px;
+            text-decoration: none;
+            color: #333;
+            position: relative;
+            white-space: nowrap;
+            transition: 0.2s;
+            font-weight: 600;
+        }
+
+
+        .botoesdesk a:hover {
+            background-color: #888;
+        }
+
+        .botoesdesk a:hover {
+            background-color: #888;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .tabela-extrato-de-transacoes {
+            width: 680px;
+            padding-right: 0px;
+
+        }
+    }
+</style>
 </head>
 
 <body>
@@ -15,123 +288,136 @@
         </div>
 
 
-        <div class="botao">
-          <button class="botao-a">Dashboard</button>
-            <button class="botao-b">Resumo</button>
-            <button class="botao-c">Configurações</button>
+        <div class="botoesdesk">
+            <!--Botões da parte desktop, eles ficam invisiveis até a tela atingir a medida da tela desktop-->
+            <div class="deskbt" id="ctdesk"><a>Dashboard</a></div>
+            <span class="pipe">|</span>
+            <div class="deskbt"><a href="">Resumo</a></div>
+            <span class="pipe">|</span>
+            <div class="deskbt"><a href="">Configuraçoes</a></div>
         </div>
+        <div class="aba">
+            <!--aba somente disponível nas partes mobile e tablet, após isso ela some pois da espaço a botões para o desktop-->
+            <div class="menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <ul>
+                    <!--Lista de clique para versões pequenas/portateis-->
+                    <li>X</li>
+                    <li>Resumo</li>
+                    <li onclick="limparDados()">Dashboard</li>
+                    <li>Configuraçoes</li>
+                </ul>
+            </div>
+
+
 
     </header>
 
-    <table class="table-style">
-        <tr>
-            <td style="padding-left: 200px;">
-                <section>
-                    <div class="retangulo">
-
-                        <div class="texto-retangulo">
-                            Nova transação
-
-                        </div>
 
 
 
-                        <form class="formulario">
-                            <div class="linha-formulario">
-
-                                <label class="label-tipo-transacao" for="tipo">Tipode transação</label>
-                                <input placeholder="Compra" class="input-tipo-transacao" name="tipo" id="tipo" required
-                                    type="text" />
-                            </div>
-                            <div class="formulario-grande">
-                                <label class="nome-da-mercadora" for="nome">Nome da mercadora</label>
-                                <input placeholder="Input" class="input-nome-da-mercadoria" id="nome" required
-                                    type="text" />
-
-                            </div>
-                            <div class="formulario-grande">
-                                <label class="valor" for="nome">Valor</label>
-                                <input placeholder="R$ 0,00" class="valor-resultado" id="nome" required type="text" />
-
-                            </div>
-                            <div class="div-botao-formulario">
-                                <input class="botao-formulario" type="submit" value="Adicionar transação" />
-
-                            </div>
-                </section>
-
-            </td>
-            <td>
-                <section>
-                    <div class="extrato-de-transacoes">
-
-                        <div class="texto-retangulo">
-                            Extrato de transação
-
-                        </div>
 
 
-                        <table style="width:100%;">
-                            <tr>
-                                <td class="titulo-extrato-mercadoria">Mercadoria</td>
-                                <td class="titulo-extrato">Valor</td>
-                            </tr>
 
 
-                        </table>
-                        <hr>
-                        <table style="width:100%;">
-                            <tr>
-                                <td class="descricao-produto">+ Lorem ipsum dolor sit amet
-                                    consectetur</td>
-                                <td class="valor-produto">R$ 12.999,99</td>
-                            </tr>
+    <div class="conteudo-central">
 
 
-                        </table>
-                        <hr>
-                        <table style="width:100%;">
-                            <tr>
-                                <td class="descricao-produto"> - Quis nostrud exercitation</td>
-                                <td class="valor-produto">R$99,99</td>
-                            </tr>
+        <div class="form-square">
+            <h1>Nova trasacão</h1>
+            <div class="field-wrapper">
+                <div class="form-field field-small">
+                    <label>Tipo de transação</label>
+                    <select>
+                        <option>Compra</option>
+                        <option>Venda</option>
+                    </select>
+                </div>
+                <div class="form-field field-big">
+                    <label>Nome da mercadoria</label>
+                    <input type="text" placeholder="Input" />
+                </div>
+                <div class="form-field field-small">
+                    <label>Valor</label>
+                    <input type="number" placeholder="Valor" />
+                </div>
+                <div class="botao-at"></div>
+                <button>Adicionar transacão </button>
+
+            </div>
 
 
-                        </table>
-                        <hr>
-                        <table style="width:100%;">
-                            <tr>
-                                <td class="descricao-produto">+ Lorem ipsum</td>
-                                <td class="valor-produto">R$ 9,99</td>
-                            </tr>
+        </div>
+
+        <hr class="linha-01" style="margin-bottom:  1px;">
+
+        <section>
+
+            <div class="extrato-de-transacoes">
+
+                <div class="texto-retangulo">
+                    Extrato de transação
+
+                </div>
+
+                <!-- ERA AQUI ESTAVA COM 680 -->
+                <table style="width:100%;">
+                    <tr>
+                        <td class="titulo-extrato-mercadoria">Mercadoria</td>
+                        <td class="titulo-extrato">Valor</td>
+                    </tr>
+                </table>
+                <hr>
+                <table style="width:100%;">
+                    <tr>
+                        <td class="descricao-produto">+ Lorem ipsum dolor sit amet
+                            consectetur</td>
+                        <td class="valor-produto">R$ 12.999,99</td>
+                    </tr>
+                </table>
+                <hr>
+                <table style="width:100%;">
+                    <tr>
+                        <td class="descricao-produto"> - Quis nostrud exercitation</td>
+                        <td class="valor-produto">R$99,99</td>
+                    </tr>
+                </table>
+
+                <hr>
+                <table style="width:100%;">
+                    <tr>
+                        <td class="descricao-produto">+ Lorem ipsum</td>
+                        <td class="valor-produto">R$ 9,99</td>
+                    </tr>
+                </table>
+                <hr style="margin-bottom:  1px;">
+                <hr style="margin-top:  1px;">
+                <table style="width:100%;">
+                    <tr>
+                        <td class="titulo-extrato-mercadoria">Total</td>
+                        <td class="titulo-extrato">R$ 12.909,99</td>
+
+                    </tr>
+                    <table style="width: 100%">
+                        <tr>
+                            <td class="lucro">[LUCRO]</td>
+                        </tr>
+                    </table>
 
 
-                        </table>
-                        <hr style="margin-bottom:  1px;">
-                        <hr style="margin-top:  1px;">
-                        <table style="width:100%;">
-                            <tr>
-                                <td class="titulo-extrato-mercadoria">Total</td>
-                                <td class="titulo-extrato">R$ 12.909,99</td>
-
-                            </tr>
-                            <table style="width: 100%"> 
-                            <tr>
-                                    <td class="lucro">[LUCRO]</td>
-                                </tr>
-                            </table>
+                </table>
 
 
-                        </table>
+        </section>
 
 
-                </section>
 
-            </td>
+    </div>
 
-
-        </tr>
-    </table>
 
 
 
