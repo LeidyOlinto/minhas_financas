@@ -14,7 +14,10 @@
     body {
         margin: 0;
         font-size: 14px;
+        font-family: "Lato";
     }
+ 
+
 
     .form-square {
         width: 100%;
@@ -43,7 +46,7 @@
         margin-left: 20px;
         margin-right: 20px;
         line-height: 22px;
-        margin: 28px;
+        margin: 22px;
 
     }
 
@@ -134,7 +137,10 @@
     padding-right: 0px;
 
 } */
-
+.conteudo-central{
+    padding-left: 20px;
+    padding-right: 20px;
+}
     @media screen and (min-width: 768px) {
         .form-square h1 {
             display: block;
@@ -172,11 +178,11 @@
         }
 
         .form-square {
-            border: 1px solid black;
+            border: 1px solid #97979797;
             margin: 20px;
             padding-top: 20px;
             padding-bottom: 20px;
-            width: calc(100% - 40px);
+            width: calc(100% - 10px);
         }
 
         .form-square button {
@@ -191,6 +197,12 @@
         .botoesdesk {
             display: none;
         }
+        .conteudo-central{
+            padding: 41px;
+            padding-top: 20px;
+            padding-left: 20px;
+
+        }
 /* 
         .tabela-extrato-de-transacoes {
             width: 100%;
@@ -203,6 +215,8 @@
         .conteudo-central {
             display: flex;
             padding-left: 200px;
+            padding-right: 200px;
+           
 
 
         }
@@ -244,6 +258,7 @@
             justify-content: space-around;
             background-color: white;
             align-items: center;
+            margin-left: 200px;
         }
 
 
@@ -255,7 +270,7 @@
             position: relative;
             white-space: nowrap;
             transition: 0.2s;
-            font-weight: 600;
+          
         }
 
 
@@ -290,9 +305,9 @@
 
         <div class="botoesdesk">
             <!--Botões da parte desktop, eles ficam invisiveis até a tela atingir a medida da tela desktop-->
-            <div class="deskbt" id="ctdesk"><a>Dashboard</a></div>
+            <div class="deskbt" id="ctdesk"><a>Cadastro de transações</a></div>
             <span class="pipe">|</span>
-            <div class="deskbt"><a href="">Resumo</a></div>
+            <div class="deskbt"><a href="">Limpar dados</a></div>
             <span class="pipe">|</span>
             <div class="deskbt"><a href="">Configuraçoes</a></div>
         </div>
@@ -324,7 +339,7 @@
 
 
 
-    <div class="conteudo-central">
+    <div class="conteudo-central ">
 
 
         <div class="form-square">
@@ -408,19 +423,11 @@
                         </tr>
                     </table>
 
-
                 </table>
 
 
-        </section>
-
-
-
+            </section>
     </div>
-
-
-
-
 
 </body>
 

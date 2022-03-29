@@ -2,7 +2,7 @@
 .logo {
 
     padding-left: 200px;
-    
+    font-family: 'Lato';
 }
 
 
@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+ 
 
    
 }
@@ -20,18 +21,12 @@
 .texto-cabecalho {
  
     font-size: 20px;
-    font-family:lato;
-    font-weight: 600 ;
+    font-family:'Lato';
     font-style: normal;
     padding-left: 20px;
 }
-.retangulo {
-    width: 400px;
-    height: 344px;
-    border: 1px solid #979797;
-    
 
-}
+
   .texto-retangulo {
 /* width: 174px; */
 height: 20px;
@@ -45,94 +40,6 @@ text-align: center;
 padding-top:20px ;
 padding-bottom: 20px;
 
-  }
-  .label-tipo-transacao {
-    display: flex;
-    justify-content: last baseline;
-    margin: 10px 0px;
-    padding-left: 14.9px;
-    padding-top:21px ;
-
-}
-.input-tipo-transacao {
-    width: 370.2px;
-    margin: auto;
-    display: flex;
-      
-}
-.nome-da-mercadora {
-    display: flex;
-    justify-content: last baseline;
-    margin: 10px 0px;
-    padding-left: 14.9px;
-    padding-top:20px ;
-}
-.input-nome-da-mercadoria {
-    width: 370.2px;
-    margin: auto;
-    display: flex;
-}
-.valor{
-    display: flex;
-    justify-content: last baseline;
-    margin: 10px 0px;
-    padding-left: 14.9px;
-    padding-top:20px;
-       
-
-}
-.table-style{
-    padding-top: 30px;
-    padding-left: 200px;
-    flex-direction: column;
-}
-.valor-resultado {
-    width: 370.2px;
-    margin: auto;
-    display: flex;
-   
-}
-
-.botao-formulario{
-    width: 370px;
-    height: 32px;
-    border-radius: 4px;
-    background-color: #333333;
-    margin: auto;
-    display: block;
-    
-    
-}
-.div-botao-formulario {
-    padding-top: 20px;
-    
-}
-
-
-
-
-
-.text-extrato-de-transacoes {
-    font-family: lato;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 22px;
-    letter-spacing: 0px;
-    
-    
-}
-
-.titulo-extrato-transacoes {
-  text-align: center;
-  font-family: lato;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 22px;
-  letter-spacing: 0px;
-  text-align: center;
-    
 }
 
 .extrato-de-transacoes {
@@ -141,12 +48,12 @@ padding-bottom: 20px;
    border-color: #979797;
     text-align: center;
     padding: 20px;
-    
-
-    
+   
+      
 }
+
 .titulo-extrato {
-   font-family:lato;
+   font-family:'Lato';
    font-weight: 700;
    font-style: normal;
   font-size:14px;
@@ -156,7 +63,7 @@ padding-bottom: 20px;
 
 }
 .titulo-extrato-mercadoria{
-    font-family:lato;
+  
     font-weight: 700;
     font-style: normal;
    font-size:14px;
