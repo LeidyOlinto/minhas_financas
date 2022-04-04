@@ -1,129 +1,366 @@
+body {
+    margin: 0;
+    font-size: 14px;
+    font-family: "Lato";
+}
 
-.logo {
+.texto-imagem {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
-    padding-left: 200px;
-    font-family: 'Lato';
+.linha-01 {
+    margin-bottom: 1px;
+}
+
+.extrato-de-transacoes {
+    justify-content: center;
+    display: flex;
+}
+
+.texto-cabecalho {
+    text-align: center;
+    display: flex;
+    padding-left: 100px;
+}
+
+.th,
+td {
+    padding: 8px;
+    text-align: left;
+    font-weight: 400;
+    border-top: solid 1px #979797;
+
+}
+
+.tabela {
+    padding: 20px 20px 0px;
+    padding-right: 20px;
+    text-align: end;
+    width: 100%;
+
+}
+
+.mercadoria-esquerda {
+    display: flex;
 }
 
 
-.cabecalho{
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.valor {
+    text-align: end;
+}
+
+.form-square {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-square .field-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 0px 20px;
+}
+
+.form-square button {
+    margin-top: 19.78px;
+    background: #333;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 22px;
+    margin: 22px;
+
+}
+
+.form-square input,
+.form-square select {
+    border: 1px solid #97979797;
+    border-radius: 4px;
+    height: 32px;
+}
+
+.form-square label {
+    margin-bottom: 2px;
+}
+
+.form-square h1 {
+    display: none;
+
+}
+
+
+.menu div {
+    width: 33px;
+    height: 4px;
+    background-color: #333;
+    margin: 4px 0;
+
+}
+
+.aba {
+    padding-right: 27px;
+}
+
+.aba ul {
+    list-style-type: none;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    height: 100%;
+    width: 85.4%;
+    right: 0px;
+    top: 0px;
+    margin: 0px;
+    padding: 20px 0;
+    font-size: 16px;
+    display: none;
+    z-index: 2;
+}
+
+.aba ul li:nth-child(1) {
+    text-align: left;
+}
+
+.aba ul li {
+    text-align: right;
+    margin: 7px 0;
+    padding: 0 20px;
+
+}
+
+.aba ul li:hover {
+    background-color: #c4c4c4;
+    color: #333;
+}
+
+.aba ul li:nth-child(1) {
+    background-color: #333;
+    color: white;
+}
+
+.aba:hover ul {
+    display: block;
+}
+
+.botoesdesk {
+    display: none;
+}
+
+
+.conteudo-central {
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.cabecalho {
     width: 100%;
     height: 80px;
     background-color: #E0E0E0;
     display: flex;
     align-items: center;
     justify-content: space-between;
- 
+    padding-left: 20px;
 
-   
 }
 
 .texto-cabecalho {
- 
+
     font-size: 20px;
-    font-family:'Lato';
+    font-family: 'Lato';
     font-style: normal;
     padding-left: 20px;
 }
 
-
-  .texto-retangulo {
-/* width: 174px; */
-height: 20px;
-top: 20px;
-left: 113px;
-font-weight: 700;
-font-size: normal;
-font-size: 18px;
-line-height: 22px;
-text-align: center;
-padding-top:20px ;
-padding-bottom: 20px;
-
-}
-
-.extrato-de-transacoes {
-    width: 100%;
-    height: 281px;
-   border-color: #979797;
-    text-align: center;
-    padding: 20px;
-   
-      
-}
-
-.titulo-extrato {
-   font-family:'Lato';
-   font-weight: 700;
-   font-style: normal;
-  font-size:14px;
-  text-align: right;
-  padding-right: 20px;
-
-
-}
-.titulo-extrato-mercadoria{
-  
-    font-weight: 700;
-    font-style: normal;
-   font-size:14px;
-   text-align: left;
-   padding-left: 40px;
- 
- 
- }
-
-.descricao-produto {
-font-family: lato;
-font-weight: 400;
-font-style: normal;
-font-size: 14px;
-text-align: left;
-padding-left: 20px;
-
-
-
-
-}
-.valor-produto {
-    font-family: lato;
-    font-weight: 400;
-    font-style: normal;
-   font-size: 14px;
-   text-align: right;
-   padding-right: 20px;
-    
-    
-    }
-    .lucro{
-        text-align: right;
-        padding-right: 20px; 
-        font-family: lato;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 10px;
-
-
-    }
-  
-    @media screen and (max-width:1112px) {
-        .logo {
-    padding-left: 22px;
- }
- .botao {
-    padding-right: 20px;
-}
-
-.table-style{
-    padding-top: 30px;
-    padding-left: 20px;
-}
-
-.sessao-tabela{
+.total-esquerda {
     display: contents;
 }
+
+.texto-retangulo {
+    height: 20px;
+    top: 20px;
+    left: 113px;
+    font-weight: 700;
+    font-size: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
 }
 
-   
+@media screen and (min-width: 768px) {
+    .form-square h1 {
+        display: block;
+        text-align: center;
+        font-size: 18px;
+    }
 
+    .texto-imagem {
+        width: 100%;
+        display: flex;
 
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1112px;
+
+    }
+
+    .logo {
+
+        padding-right: 22px;
+        max-width: 1112;
+    }
+
+    .aba {
+        padding-right: 20px;
+    }
+
+    .aba ul {
+        width: 32%;
+    }
+
+    .form-square .field-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+    }
+
+    .form-square .form-field {
+        margin-top: 0px;
+    }
+
+    .field-small {
+        width: calc(20% - 30px);
+
+    }
+
+    .field-big {
+        width: calc(60% - 60px);
+
+    }
+
+    .extrato-de-transacoes {
+        justify-content: center;
+        display: flex;
+    }
+
+    .form-square {
+        border: 1px solid #97979797;
+        margin: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: calc(100% - 10px);
+    }
+
+    .linha-01 {
+        display: none;
+    }
+
+    .botoesdesk {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width:1112px) {
+
+    .logo {
+        padding-left: 200px;
+    }
+
+    .conteudo-central {
+        display: flex;
+        padding-left: 200px;
+        padding-right: 200px;
+
+    }
+
+    .form-square .field-wrapper {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+
+    }
+
+    .form-square .form-field {
+        margin: 0px;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .form-square button {
+        width: 100%;
+        margin: 0px;
+        margin-top: 20px;
+    }
+
+    .form-square {
+        width: 400px;
+        padding: 20px;
+
+    }
+
+    .aba ul {
+        display: none;
+    }
+
+    .botoesdesk {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        background-color: white;
+        align-items: center;
+        margin-left: 200px;
+    }
+
+    .botoesdesk a,
+    .pipe {
+        padding: 8px;
+        text-decoration: none;
+        color: #333;
+        position: relative;
+        white-space: nowrap;
+        transition: 0.2s;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .mercadoria-esquerda {
+        display: flex;
+    }
+
+    .estrato-principal {
+        width: 100%;
+    }
+
+    .extrato-de-transacoes {
+        justify-content: center;
+        display: flex;
+    }
+
+    .aba {
+        display: none;
+    }
+}

@@ -2,342 +2,53 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, inicial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0" />
     <title>
         Comtrole financeiro
     </title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<style>
-    body {
-        margin: 0;
-        font-size: 14px;
-        font-family: "Lato";
-    }
- 
 
-
-    .form-square {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .form-square .field-wrapper {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .form-field {
-        display: flex;
-        flex-direction: column;
-        margin: 20px 20px 0px 20px;
-    }
-
-    .form-square button {
-        margin-top: 19.78px;
-        background: #333;
-        color: white;
-        margin-left: 20px;
-        margin-right: 20px;
-        line-height: 22px;
-        margin: 22px;
-
-    }
-
-
-    .form-square input,
-    .form-square select {
-        border: 1px solid #97979797;
-        border-radius: 4px;
-        height: 32px;
-    }
-
-    .form-square label {
-        margin-bottom: 2px;
-    }
-
-    .form-square h1 {
-        display: none;
-
-    }
-/* 
-    .extrato-de-transacoes {
-        padding-bottom: 20px;
-        padding-top: 7px;
-        padding-right: 20px;
-        width: 100%;
-        
-    } */
-
-    .menu div {
-        width: 33px;
-        height: 4px;
-        background-color: #333;
-        margin: 4px 0;
-
-    }
-
-    .aba {
-        padding-right: 27px;
-    }
-
-    .aba ul {
-        list-style-type: none;
-        background-color: #333;
-        color: white;
-        position: fixed;
-        height: 100%;
-        width: 85.4%;
-        right: 0px;
-        top: 0px;
-        margin: 0px;
-        padding: 20px 0;
-        font-size: 16px;
-        display: none;
-        z-index: 2;
-    }
-
-    .aba ul li:nth-child(1) {
-        text-align: left;
-    }
-
-    .aba ul li {
-        text-align: right;
-        margin: 7px 0;
-        padding: 0 20px;
-
-    }
-
-    .aba ul li:hover {
-        background-color: #c4c4c4;
-        color: #333;
-    }
-
-    .aba ul li:nth-child(1) {
-        background-color: #333;
-        color: white;
-    }
-
-    .aba:hover ul {
-        display: block;
-    }
-
-    .botoesdesk {
-        display: none;
-    }
-    /* .tabela-extrato-de-transacoes
-{
-    width: 680px;
-    padding-right: 0px;
-
-} */
-.conteudo-central{
-    padding-left: 20px;
-    padding-right: 20px;
-}
-    @media screen and (min-width: 768px) {
-        .form-square h1 {
-            display: block;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        .aba {
-            padding-right: 20px;
-        }
-
-        .aba ul {
-            width: 32%;
-        }
-
-        .form-square .field-wrapper {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-
-        }
-
-        .form-square .form-field {
-            margin-top: 0px;
-        }
-
-        .field-small {
-            width: calc(20% - 30px);
-
-        }
-
-        .field-big {
-            width: calc(60% - 60px);
-
-        }
-
-        .form-square {
-            border: 1px solid #97979797;
-            margin: 20px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            width: calc(100% - 10px);
-        }
-
-        .form-square button {
-            width: 200px;
-            height: 32px;
-        }
-
-        .linha-01 {
-            display: none;
-        }
-
-        .botoesdesk {
-            display: none;
-        }
-        .conteudo-central{
-            padding: 41px;
-            padding-top: 20px;
-            padding-left: 20px;
-
-        }
-/* 
-        .tabela-extrato-de-transacoes {
-            width: 100%;
-            padding-right: 10px;
-        } */
-
-    }
-
-    @media screen and (min-width: 1112px) {
-        .conteudo-central {
-            display: flex;
-            padding-left: 200px;
-            padding-right: 200px;
-           
-
-
-        }
-
-        .form-square .field-wrapper {
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: center;
-
-        }
-
-        .form-square .form-field {
-            margin: 0px;
-            margin-top: 20px;
-            width: 100%;
-        }
-
-        .form-square button {
-            width: 100%;
-            margin: 0px;
-            margin-top: 20px;
-        }
-
-        .form-square {
-            width: 400px;
-            padding: 20px;
-
-
-        }
-
-        .aba ul {
-            display: none;
-        }
-
-        .botoesdesk {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
-            background-color: white;
-            align-items: center;
-            margin-left: 200px;
-        }
-
-
-        .botoesdesk a,
-        .pipe {
-            padding: 8px;
-            text-decoration: none;
-            color: #333;
-            position: relative;
-            white-space: nowrap;
-            transition: 0.2s;
-          
-        }
-
-
-        .botoesdesk a:hover {
-            background-color: #888;
-        }
-
-        .botoesdesk a:hover {
-            background-color: #888;
-        }
-
-        .menu {
-            display: none;
-        }
-
-        /* .tabela-extrato-de-transacoes {
-            width: 680px;
-            padding-right: 0px;
-
-        } */
-    }
-</style>
-</head>
 
 <body>
     <header class="cabecalho">
-        <div style=" display: flex; align-items: center;">
+        <div class="texto-imagem">
             <img class="logo" src="assets/img/logo1.png">
-            <div class="texto-cabecalho">Controle financeiro</div>
-        </div>
-
-
-        <div class="botoesdesk">
-            <!--Botões da parte desktop, eles ficam invisiveis até a tela atingir a medida da tela desktop-->
-            <div class="deskbt" id="ctdesk"><a>Cadastro de transações</a></div>
-            <span class="pipe">|</span>
-            <div class="deskbt"><a href="">Limpar dados</a></div>
-            <span class="pipe">|</span>
-            <div class="deskbt"><a href="">Configuraçoes</a></div>
-        </div>
-        <div class="aba">
-            <!--aba somente disponível nas partes mobile e tablet, após isso ela some pois da espaço a botões para o desktop-->
-            <div class="menu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div>
-                <ul>
-                    <!--Lista de clique para versões pequenas/portateis-->
-                    <li>X</li>
-                    <li>Resumo</li>
-                    <li onclick="limparDados()">Dashboard</li>
-                    <li>Configuraçoes</li>
-                </ul>
+            <div class="texto-cabecalho">
+                <p>Controle financeiro</p>
             </div>
 
 
+            <div class="botoesdesk">
+                <!--Botões da parte desktop, eles ficam invisiveis até a tela atingir a medida da tela desktop-->
+                <div class="deskbt" id="ctdesk"><a>Cadastro de transações</a></div>
+                <span class="pipe">|</span>
+                <div class="deskbt"><a href="">Limpar dados</a></div>
+                <span class="pipe">|</span>
+                <div class="deskbt"><a href="">Configuraçoes</a></div>
+            </div>
+
+            <div class="aba">
+                <!--aba somente disponível nas partes mobile e tablet, após isso ela some pois da espaço a botões para o desktop-->
+                <div class="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <ul>
+                        <!--Lista de clique para versões pequenas/portateis-->
+                        <li>X</li>
+                        <li>Cadastro de transações</li>
+                        <li onclick="limparDados()">Limpar dados</li>
+
+                    </ul>
+                </div>
+            </div>
 
     </header>
-
-
-
-
-
-
-
 
     <div class="conteudo-central ">
 
@@ -364,69 +75,51 @@
                 <button>Adicionar transacão </button>
 
             </div>
+        </div>
+        <hr class="linha-01">
+        </hr>
 
+        <div class="estrato-principal">
+            <div class="extrato-de-transacoes">
+                <p>
+                <h3>Extrato de transações</h3>
+                </p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="mercadoria-esquerda">Mercadoria</th>
+                        <th class="valor">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>+ Lorem ipsum dolor sit amet consectetur </td>
+                        <td class="valor">R$ 12.999,99</td>
+                    </tr>
+                    <tr>
+                        <td>- Quis nostrud exercitation</td>
+                        <td class="valor">R$ 99,99</td>
+                    </tr>
+                    <tr>
+                        <td>+ Lorem ipsum </td>
+                        <td class="valor">R$ 9,99</td>
+                    </tr>
+                    <tr>
+                        <th class="total-esquerda">Total</th>
+                        <th class="valor">R$ 12.909,99</th>
+                    </tr>
+                </tbody>
+                <tfoot>
 
+                    <td></td>
+
+                    <td class="valor">Lucro</td>
+
+                </tfoot>
+            </table>
         </div>
 
-        <hr class="linha-01" style="margin-bottom:  1px;"></hr>
-
-        <section style="display: contents;">
-
-            <div class="extrato-de-transacoes">
-
-                <div class="texto-retangulo">
-                    Extrato de transação
-
-                </div>
-
-                <!-- ERA AQUI ESTAVA COM 680 -->
-                <table style="width:100%;">
-                    <tr>
-                        <td class="titulo-extrato-mercadoria">Mercadoria</td>
-                        <td class="titulo-extrato">Valor</td>
-                    </tr>
-                </table>
-                <hr>
-                <table style="width:100%;">
-                    <tr>
-                        <td class="descricao-produto">+ Lorem ipsum dolor sit amet
-                            consectetur</td>
-                        <td class="valor-produto">R$ 12.999,99</td>
-                    </tr>
-                </table>
-                <hr>
-                <table style="width:100%;">
-                    <tr>
-                        <td class="descricao-produto"> - Quis nostrud exercitation</td>
-                        <td class="valor-produto">R$99,99</td>
-                    </tr>
-                </table>
-
-                <hr>
-                <table style="width:100%;">
-                    <tr>
-                        <td class="descricao-produto">+ Lorem ipsum</td>
-                        <td class="valor-produto">R$ 9,99</td>
-                    </tr>
-                </table>
-                <hr style="margin-bottom:  1px;">
-                <hr style="margin-top:  1px;">
-                <table style="width:100%;">
-                    <tr>
-                        <td class="titulo-extrato-mercadoria">Total</td>
-                        <td class="titulo-extrato">R$ 12.909,99</td>
-
-                    </tr>
-                    <table style="width: 100%">
-                        <tr>
-                            <td class="lucro">[LUCRO]</td>
-                        </tr>
-                    </table>
-
-                </table>
-
-
-            </section>
     </div>
 
 </body>
