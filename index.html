@@ -14,47 +14,53 @@
 
 <body>
     <header class="cabecalho">
-        <div class="texto-imagem">
-            <img class="logo" src="assets/img/logo1.png">
-            <div class="texto-cabecalho">
-                <p>Controle financeiro</p>
+        <div style=" display: flex;">
+  <!-- <div class="texto-imagem"> -->
+    <img class="logo" src="assets/img/logo1.png">
+    <div class="texto-cabecalho ">
+        <p>Controle financeiro</p>
+    </div>
+        </div>
+      
+
+<div class="botoes-3" > 
+
+    <div class="botoesdesk">
+        <!--Botões da parte desktop, eles ficam invisiveis até a tela atingir a medida da tela desktop-->
+        <div class="deskbt" id="ctdesk"><a>Cadastro de transações</a></div>
+        <span class="pipe">|</span>
+        <div class="deskbt"><a href="">Limpar dados</a></div>
+        <span class="pipe">|</span>
+        <div class="deskbt"><a href="">Configuraçoes</a></div>
+    </div>
+
+    <div class="aba">
+        <!--aba somente disponível nas partes mobile e tablet, após isso ela some pois da espaço a botões para o desktop-->
+        <div class="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <ul>
+                <!--Lista de clique para versões pequenas/portateis-->
+                <li>X</li>
+                <li>Cadastro de transações</li>
+                <li onclick="limparDados()">Limpar dados</li>
+
+            </ul>
+        </div>
+</div>
+           
             </div>
-
-
-            <div class="botoesdesk">
-                <!--Botões da parte desktop, eles ficam invisiveis até a tela atingir a medida da tela desktop-->
-                <div class="deskbt" id="ctdesk"><a>Cadastro de transações</a></div>
-                <span class="pipe">|</span>
-                <div class="deskbt"><a href="">Limpar dados</a></div>
-                <span class="pipe">|</span>
-                <div class="deskbt"><a href="">Configuraçoes</a></div>
-            </div>
-
-            <div class="aba">
-                <!--aba somente disponível nas partes mobile e tablet, após isso ela some pois da espaço a botões para o desktop-->
-                <div class="menu">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div>
-                    <ul>
-                        <!--Lista de clique para versões pequenas/portateis-->
-                        <li>X</li>
-                        <li>Cadastro de transações</li>
-                        <li onclick="limparDados()">Limpar dados</li>
-
-                    </ul>
-                </div>
-            </div>
-
+        <!-- </div> -->
     </header>
 
     <div class="conteudo-central ">
 
 
         <div class="form-square">
-            <h1>Nova trasacão</h1>
+            <h1>Nova transacão</h1>
             <div class="field-wrapper">
                 <div class="form-field field-small">
                     <label>Tipo de transação</label>
@@ -105,18 +111,20 @@
                         <td>+ Lorem ipsum </td>
                         <td class="valor">R$ 9,99</td>
                     </tr>
+
                     <tr>
-                        <th class="total-esquerda">Total</th>
-                        <th class="valor">R$ 12.909,99</th>
+                        <td colspan="2" class="vt" id="lc"></td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td class="total-esquerda">Total</td>
+                        <td class="valor-final">R$ 12.909,99 <br>[Lucro]</br></td>
                     </tr>
                 </tbody>
-                <tfoot>
 
-                    <td></td>
-
-                    <td class="valor">Lucro</td>
-
-                </tfoot>
             </table>
         </div>
 
