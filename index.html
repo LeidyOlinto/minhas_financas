@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, inicial-scale=1.0" />
+    <script type="text/javascript" src="./script.js"></script>
     <title>
         Comtrole financeiro
     </title>
@@ -15,7 +19,7 @@
 <body>
     <header class="cabecalho">
 
-        <div class="controle-financeiro" >
+        <div class="controle-financeiro">
             <!-- <div class="texto-imagem"> -->
             <img class="logo" src="assets/img/logo1.png">
             <div class="texto-cabecalho ">
@@ -30,9 +34,9 @@
                 <!--Botões da parte desktop, eles ficam invisiveis até a tela atingir a medida da tela desktop-->
                 <div class="deskbt" id="ctdesk"><a>Cadastro de transações</a></div>
                 <span class="pipe">|</span>
-                <div class="deskbt"><a href="">Limpar dados</a></div>
-                <span class="pipe">|</span>
-                <div class="deskbt"><a href="">Configuraçoes</a></div>
+                <div class="deskbt"><a  onclick="limparDados()">Limpar dados</a></div>
+                <span class="pipe"></span>
+                <div class="deskbt"><a ></a></div>
             </div>
 
             <div class="aba">
@@ -47,42 +51,45 @@
                         <!--Lista de clique para versões pequenas/portateis-->
                         <li>X</li>
                         <li>Cadastro de transações</li>
-                        <li onclick="limparDados()">Limpar dados</li>
+                        <li onclick= "limparDados()">Limpar dados</li>
+                        <li>Salvar no Servidor</li>
 
                     </ul>
                 </div>
             </div>
 
         </div>
-        <!-- </div> -->
+       
+
     </header>
 
     <div class="conteudo-central ">
 
 
-        <div class="form-square">
+        <form class="form-square"  onsubmit="addItem(event); return false;">
             <h1>Nova transacão</h1>
             <div class="field-wrapper">
                 <div class="form-field field-small">
                     <label>Tipo de transação</label>
-                    <select>
-                        <option>Compra</option>
-                        <option>Venda</option>
+                    <select name="operacao" required>
+                        <option value="">Selecione</option>
+                        <option name="venda" value="-">Compra</option>
+                        <option name="compra" value="+">Venda</option>
                     </select>
                 </div>
                 <div class="form-field field-big">
                     <label>Nome da mercadoria</label>
-                    <input type="text" placeholder="Input" />
+                    <input name="nome" required type="text" placeholder="Input" />
                 </div>
                 <div class="form-field field-small">
                     <label>Valor</label>
-                    <input type="number" placeholder="Valor" />
+                    <input name="valor" required type="number" placeholder="Valor" />
                 </div>
                 <div class="botao-at"></div>
                 <button>Adicionar transacão </button>
 
             </div>
-        </div>
+        </form>
         <hr class="linha-01">
         </hr>
 
@@ -92,7 +99,7 @@
                 <h3>Extrato de transações</h3>
                 </p>
             </div>
-            <table>
+            <table id="tabela table">
                 <thead>
                     <tr>
                         <th class="mercadoria-esquerda">Mercadoria</th>
@@ -100,37 +107,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>+ Lorem ipsum dolor sit amet consectetur </td>
-                        <td class="valor">R$ 12.999,99</td>
-                    </tr>
-                    <tr>
-                        <td>- Quis nostrud exercitation</td>
-                        <td class="valor">R$ 99,99</td>
-                    </tr>
-                    <tr>
-                        <td>+ Lorem ipsum </td>
-                        <td class="valor">R$ 9,99</td>
-                    </tr>
 
-                    <tr>
-                        <td colspan="2" class="vt" id="lc"></td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="total-esquerda">Total</td>
-                        <td class="valor-final">R$ 12.909,99 <br>[Lucro]</br></td>
-                    </tr>
                 </tbody>
 
             </table>
         </div>
 
     </div>
-
+   
+    <script>
+    
+        desenhaTabela();
+       
+    </script>
 </body>
 
 </html>

@@ -432,3 +432,16 @@ table {
     }
 
 }
+
+/* [
+    {
+    tipo: '+',
+    nome: 'Mercadoria1',
+    valor: 25.00
+},
+{
+    tipo: '-',
+    nome: 'Mercadoria2',
+    valor: 70.00
+}
+] */
