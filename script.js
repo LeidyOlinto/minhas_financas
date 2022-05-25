@@ -1,21 +1,29 @@
 
-transacoes = [
-    {
-    tipo: '+',
-    nome: 'Mercadoria1',
-    valor: 25.00
-},
-{
-    tipo: '-',
-    nome: 'Mercadoria2',
-    valor: 70.00
+// transacoes = [
+//     {
+//     tipo: '+',
+//     nome: 'Mercadoria1',
+//     valor: 25.00
+// },
+// {
+//     tipo: '-',
+//     nome: 'Mercadoria2',
+//     valor: 70.00
+// }
+// ]
+var transacoes = [];
+var transacaoRaw = JSON.parse(localStorage.getItem('transacoes')) 
+if(transacaoRaw != null){
+    transacoes = transacaoRaw
+}else {
+    transacoes = [];
 }
-]
+ console.log(transacoes);
 function envioFormulario(e) {
     
     console.log(e);
 }
-
+desenhaTabela();
 
     function desenhaTabela() {
 
@@ -61,7 +69,9 @@ function envioFormulario(e) {
     }
     function limparDados() {
         transacoes = [];
-       
+        localStorage.setItem("transacoes" , JSON.stringify([
+            
+           ]))
         desenhaTabela();
 
     }
@@ -80,7 +90,8 @@ function envioFormulario(e) {
 
         }
        
-        transacoes.push(objeto);       
+        transacoes.push(objeto);  
+        localStorage.setItem("transacoes", JSON.stringify(transacoes)); 
          desenhaTabela();
 
     }
