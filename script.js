@@ -1,47 +1,33 @@
 
-// transacoes = [
-//     {
-//     tipo: '+',
-//     nome: 'Mercadoria1',
-//     valor: 25.00
-// },
-// {
-//     tipo: '-',
-//     nome: 'Mercadoria2',
-//     valor: 70.00
-// }
-// ]
 var transacoes = [];
-var transacaoRaw = JSON.parse(localStorage.getItem('transacoes')) 
-if(transacaoRaw != null){
+var transacaoRaw = JSON.parse(localStorage.getItem('transacoes'))
+if (transacaoRaw != null) {
     transacoes = transacaoRaw
-}else {
+} else {
     transacoes = [];
 }
- console.log(transacoes);
+console.log(transacoes);
 function envioFormulario(e) {
-    
+
     console.log(e);
 }
-desenhaTabela();
+function desenhaTabela() {
 
-    function desenhaTabela() {
-
-        linhasTransacao = `  
+    linhasTransacao = `  
         `;
-        total = 0;
-        for (linha of transacoes) {
-            linhasTransacao += `
+    total = 0;
+    for (linha of transacoes) {
+        linhasTransacao += `
             <tr>
-                <td>${linha.tipo}</td>
-                <td>${linha.nome} </td>
+                <td>${linha.tipo} ${linha.nome}</td>
+                
                 <td class="valor">R$ ${linha.valor.toLocaleString('pt-BR')}</td>
             </tr>
             `;
-            total += linha.valor * (linha.tipo == '-' ? -1 : 1)       
-        }
-        totalSemsinal = total * (total >= 0 ? 1 : -1)
-        document.querySelector('table').innerHTML = `
+        total += linha.valor * (linha.tipo == '-' ? -1 : 1)
+    }
+    totalSemsinal = total * (total >= 0 ? 1 : -1)
+    document.querySelector('table').innerHTML = `
                     ${linhasTransacao}
                         <tr>
                             <td colspan="3" class="vt" id="lc"></td>
@@ -52,48 +38,51 @@ desenhaTabela();
                             <td class="total-esquerda">Total</td>
                             <td class="valor-final">
                                 R$ ${totalSemsinal.toLocaleString('pt-BR')}
-                                <br/>
+                                </br>
             `
-        if (total < 0) {
-            document.querySelector('table').innerHTML += '[LUCRO]'
-        }
-        if (total > 0) {
-            document.querySelector('table').innerHTML += '[PREJUIZO]'
-        }
-        document.querySelector('table').innerHTML += `
+    if (total > 0) {
+        document.querySelector('table').innerHTML += '<tr><td>[LUCRO]</td></tr>'
+    }
+    if (total < 0) {
+        document.querySelector('table').innerHTML += '[PREJUIZO]'
+    }
+    document.querySelector('table').innerHTML += `
                         
  </td>
  </tr>
 `;
 
-    }
-    function limparDados() {
+}
+function limparDados() {
+    let userConfirm = confirm("Deseja mesmo remover todas as transações?");
+    if (userConfirm == true) {
         transacoes = [];
-        localStorage.setItem("transacoes" , JSON.stringify([
-            
-           ]))
-        desenhaTabela();
-
+        localStorage.setItem("transacoes", JSON.stringify([  
+        ]))
+      
+     
     }
-    function deleteUser(p){
-        table.slice(p ,1);
-        desenhaTabela();
-        localStorage.setItem('table', JSON.stringify(table))
 
+  
+    desenhaTabela();
+}
+function deleteUser(p) {
+    table.slice(p, 1);
+    desenhaTabela();
+    localStorage.setItem('table', JSON.stringify(table))
+}
+
+function addItem(item) {
+    var objeto = {
+        tipo: item.currentTarget.elements['operacao'].selectedIndex == 1 ? '-' : '+',
+        nome: item.currentTarget.elements['nome'].value,
+        valor: item.currentTarget.elements['valor'].value,
     }
+
+    transacoes.push(objeto);
+    localStorage.setItem("transacoes", JSON.stringify(transacoes));
+    desenhaTabela();
+
+}
     
-    function addItem(item){
-        var objeto  = {
-            tipo: item.currentTarget.elements['operacao'].selectedIndex == 1 ? '+': '-',
-            nome: item.currentTarget.elements['nome'].value,
-            valor:item.currentTarget.elements['valor'].value,
 
-        }
-       
-        transacoes.push(objeto);  
-        localStorage.setItem("transacoes", JSON.stringify(transacoes)); 
-         desenhaTabela();
-
-    }
-
-   
