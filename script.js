@@ -1,6 +1,10 @@
 
+//declaração de variaveis
 var transacoes = [];
+var linhasTransacao = ``;
+var totalString=``;
 var transacaoRaw = JSON.parse(localStorage.getItem('transacoes'))
+
 if (transacaoRaw != null) {
     transacoes = transacaoRaw
 } else {
@@ -13,8 +17,7 @@ function envioFormulario(e) {
 }
 function desenhaTabela() {
 
-    linhasTransacao = `  
-        `;
+  
     total = 0;
     for (linha of transacoes) {
         linhasTransacao += `
@@ -27,7 +30,7 @@ function desenhaTabela() {
         total += linha.valor * (linha.tipo == '-' ? -1 : 1)
     }
     totalSemsinal = total * (total >= 0 ? 1 : -1)
-    document.querySelector('table').innerHTML = `
+   totalString = `
                     ${linhasTransacao}
                         <tr>
                             <td colspan="3" class="vt" id="lc"></td>
@@ -38,20 +41,19 @@ function desenhaTabela() {
                             <td class="total-esquerda">Total</td>
                             <td class="valor-final">
                                 R$ ${totalSemsinal.toLocaleString('pt-BR')}
-                                </br>
+                               </br>
             `
     if (total > 0) {
-        document.querySelector('table').innerHTML += '<tr><td>[LUCRO]</td></tr>'
+        totalString +='<a style=" font-size: 10px;">[LUCRO]</a>'
     }
     if (total < 0) {
-        document.querySelector('table').innerHTML += '[PREJUIZO]'
+        totalString += '<a style=" font-size: 10px;">[PREJUIZO]</a>'
     }
-    document.querySelector('table').innerHTML += `
-                        
- </td>
- </tr>
+    totalString += `
+      </td>
+      </tr>             
 `;
-
+document.querySelector('table').innerHTML += totalString
 }
 function limparDados() {
     let userConfirm = confirm("Deseja mesmo remover todas as transações?");
@@ -59,17 +61,15 @@ function limparDados() {
         transacoes = [];
         localStorage.setItem("transacoes", JSON.stringify([  
         ]))
-      
+        linhasTransacao = ``;
+         totalString=``;
+         document.querySelector('table').innerHTML ='';
+        
+    desenhaTabela();
+     
      
     }
-
   
-    desenhaTabela();
-}
-function deleteUser(p) {
-    table.slice(p, 1);
-    desenhaTabela();
-    localStorage.setItem('table', JSON.stringify(table))
 }
 
 function addItem(item) {
