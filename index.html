@@ -7,12 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, inicial-scale=1.0" />
-    
+
     <title>
         Comtrole financeiro
     </title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="cabecalho">
 
@@ -29,9 +30,9 @@
                 <!--Botões da parte desktop, eles ficam invisiveis até a tela atingir a medida da tela desktop-->
                 <div class="deskbt" id="ctdesk"><a>Cadastro de transações</a></div>
                 <span class="pipe">|</span>
-                <div class="deskbt"><a  onclick="limparDados()">Limpar dados</a></div>
+                <div class="deskbt"><a onclick="limparDados()">Limpar dados</a></div>
                 <span class="pipe"></span>
-                <div class="deskbt"><a ></a></div>
+                <div class="deskbt"><a></a></div>
             </div>
 
             <div class="aba">
@@ -44,17 +45,17 @@
                 <div class="modal-fechar">
                     <ul>
                         <!--Lista de clique para versões pequenas/portateis-->
-                       
+
                         <button style="margin:20px ;" onclick="fechaModal()">X</button>
                         <li>Cadastro de transações</li>
-                        <li onclick= "limparDados()">Limpar dados</li>
+                        <li onclick="limparDados()">Limpar dados</li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
     <div class="conteudo-central ">
-        <form class="form-square"  onsubmit="addItem(event); ">
+        <form class="form-square" onsubmit="addItem(event); ">
             <h1>Nova transacão</h1>
             <div class="field-wrapper">
                 <div class="form-field field-small">
@@ -71,7 +72,7 @@
                 </div>
                 <div class="form-field field-small">
                     <label>Valor</label>
-                    <input name="valor" required type="number" step="0.01" placeholder="Valor" />
+                    <input name="valor" onkeyup="" required type="number" step="0.01" placeholder="Valor" />
                 </div>
                 <div class="botao-at"></div>
                 <button>Adicionar transacão </button>
@@ -88,16 +89,16 @@
                 </p>
             </div>
             <table id="tabela">
-                              
+
             </table>
         </div>
 
     </div>
     <script type="text/javascript" src="./script.js"></script>
     <script>
-    
+
         desenhaTabela();
-       
+
     </script>
 </body>
 

@@ -11,9 +11,7 @@ if (transacaoRaw != null) {
     transacoes = [];
 }
 console.log(transacoes);
-function envioFormulario(e) {
-    console.log(e);
-}
+
 function desenhaTabela() {
     //Tabela dinamica.
     total = 0;
@@ -86,10 +84,10 @@ function addItem(item) {
     localStorage.setItem("transacoes", JSON.stringify(transacoes));
 }
 //Aqui fecha a aba do modal para telas de tablete e celular.
-function fechaModal() {
+function fechaModal(){
     document.getElementsByClassName('modal-fechar')[0].style.display = 'none';
 }
-function abreModal() {
+function abreModal(){
     document.getElementsByClassName('modal-fechar')[0].style.display = 'block';
 
 }
