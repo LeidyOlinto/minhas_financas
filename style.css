@@ -220,7 +220,10 @@ table {
     .cabecalho {
         width: 100%;
     }
+#botao-modal{
+    margin-left: 20px;
 
+}
     .form-square h1 {
         display: block;
         text-align: center;
@@ -430,6 +433,5 @@ table {
     .botoes-3 {
         padding-right: 200px;
     }
-    
-
+   
 }

@@ -16,40 +16,34 @@ function envioFormulario(e) {
     console.log(e);
 }
 function desenhaTabela() {
-
-
+//Tabela dinamica.
     total = 0;
     for (linha of transacoes) {
         linhasTransacao += `
-            <tr>
-                <td>${linha.tipo} ${linha.nome}</td>
-                
-                <td class="valor">R$ ${linha.valor.toLocaleString('pt-BR')}</td>
-            </tr>
+     <tr>
+         <td>${linha.tipo} ${linha.nome}</td>  
+         <td class="valor">R$ ${linha.valor.toLocaleString('pt-BR')}</td>
+      </tr>
             `;
-        total += linha.valor * (linha.tipo == '-' ? -1 : 1)
+     total += linha.valor * (linha.tipo == '-' ? -1 : 1)
     }
     totalSemsinal = total * (total >= 0 ? 1 : -1)
     if (transacoes.length == 0) {
-        totalString = `adicione uma transação`;
+        totalString = `<h4 style="text-align: center;
+        display: flow-root;">Nenhuma transação adicionada</h4>`;
     } else {
         totalString = `
-  
-        <thead>
-            <tr>
-                <th class="mercadoria-esquerda">Mercadoria</th>
-                <th class="valor">Valor</th>
-            </tr>
-        </thead>
-        
-
- 
+    <thead>
+     <tr>
+        <th class="mercadoria-esquerda">Mercadoria</th>
+        <th class="valor">Valor</th>
+     </tr>
+    </thead>
      ${linhasTransacao}
      <tr>
-     <td colspan="3" class="vt" id="lc"></td>
-
-   </tr>
-  <tr>
+      <td colspan="3" class="vt" id="lc"></td>
+    </tr>
+    <tr>
      <td class="total-esquerda">Total</td>
      <td class="valor-final">
     R$ ${totalSemsinal.toLocaleString('pt-BR')}
@@ -62,13 +56,12 @@ function desenhaTabela() {
             totalString += '<a style=" font-size: 10px;">[PREJUIZO]</a>'
         }
         totalString += `
-</td>
-</tr>             
+      </td>
+   </tr>             
 `;
     }
-
     document.getElementById('tabela').innerHTML += totalString
-}
+}//limpar os dados da transação.
 function limparDados() {
     let userConfirm = confirm("Deseja mesmo remover todas as transações?");
     if (userConfirm == true) {
@@ -80,11 +73,8 @@ function limparDados() {
         document.querySelector('table').innerHTML = '';
 
         desenhaTabela();
-
     }
-
 }
-
 function addItem(item) {
     var objeto = {
         tipo: item.currentTarget.elements['operacao'].selectedIndex == 1 ? '-' : '+',
@@ -94,8 +84,12 @@ function addItem(item) {
 
     transacoes.push(objeto);
     localStorage.setItem("transacoes", JSON.stringify(transacoes));
-    // desenhaTabela();
-
 }
-
-
+//Aqui fecha a aba do modal para telas de tablete e celular.
+function fechaModal(){
+    document.getElementsByClassName('modal-fechar')[0].style.display='none';
+}
+function abreModal(){
+    document.getElementsByClassName('modal-fechar')[0].style.display='block';
+    
+}

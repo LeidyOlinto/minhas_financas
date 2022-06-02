@@ -13,7 +13,6 @@
     </title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header class="cabecalho">
 
@@ -24,8 +23,6 @@
                 Controle financeiro
             </div>
         </div>
-
-
         <div class="botoes-3">
 
             <div class="botoesdesk">
@@ -39,31 +36,25 @@
 
             <div class="aba">
                 <!--aba somente disponível nas partes mobile e tablet, após isso ela some pois da espaço a botões para o desktop-->
-                <div class="menu">
+                <div class="menu" onclick="abreModal()">
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
-                <div>
+                <div class="modal-fechar">
                     <ul>
                         <!--Lista de clique para versões pequenas/portateis-->
-                        <li>X</li>
+                       
+                        <button style="margin:20px ;" onclick="fechaModal()">X</button>
                         <li>Cadastro de transações</li>
                         <li onclick= "limparDados()">Limpar dados</li>
                         <li>Salvar no Servidor</li>
-
                     </ul>
                 </div>
             </div>
-
         </div>
-       
-
     </header>
-
     <div class="conteudo-central ">
-
-
         <form class="form-square"  onsubmit="addItem(event); ">
             <h1>Nova transacão</h1>
             <div class="field-wrapper">
@@ -107,7 +98,6 @@
     <script>
     
         desenhaTabela();
-      
        
     </script>
 </body>
