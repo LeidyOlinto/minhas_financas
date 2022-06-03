@@ -95,7 +95,7 @@ function mask(){
     meuInput = document.getElementById('valor').value
     meuInput = (meuInput).replace(/[^0-9]+/gi, '')
     meuInput = (meuInput).replace(/([0-9][0-9])$/gi, ',$1')
-    meuInput = ((meuInput).replace(',','.')).toLocaleString('pt-BR')
+    meuInput = parseFloat((meuInput).replace(',','.')).toLocaleString('pt-BR')
     
     document.getElementById('valor').value = (meuInput)
   console.log(meuInput)
