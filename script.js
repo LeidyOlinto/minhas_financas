@@ -22,7 +22,7 @@ function desenhaTabela() {
                 <td class="valor">R$ ${linha.valor.toLocaleString('pt-BR',{minimumFractionDigits:2})}</td>
             </tr>
         `;
-        total += linha.valor * (linha.tipo == '-' ? -1 : 1)
+        total += parseFloat((linha.valor).replace(',','.')) * (linha.tipo == '-' ? -1 : 1)
     }
     totalSemsinal = total * (total >= 0 ? 1 : -1)
     if (transacoes.length == 0) {
@@ -90,14 +90,17 @@ function fechaModal(){
 function abreModal(){
     document.getElementsByClassName('modal-fechar')[0].style.display = 'block';
 }
-//mascara do input "valor".
+//mascara do input "valor" em regex.
 function mask(){
     meuInput = document.getElementById('valor').value
-    meuInput = (meuInput).replace(/[^0-9]+/gi, '')
-    meuInput = (meuInput).replace(/([0-9][0-9])$/gi, ',$1')
-    meuInput = parseFloat((meuInput).replace(',','.')).toLocaleString('pt-BR')
-    
-    document.getElementById('valor').value = (meuInput)
-  console.log(meuInput)
-
+    //if;para aplicar a regra so se um numero aparecer.
+    if(meuInput!=''){
+        meuInput = (meuInput).replace(/[^0-9]+/gi, '')
+        meuInput = (meuInput).replace(/([0-9][0-9])$/gi, ',$1')
+        meuInput = parseFloat((meuInput).replace(',','.')).toLocaleString('pt-BR',{minimumFractionDigits:2})
+        
+        document.getElementById('valor').value = (meuInput)
+      console.log(meuInput)
+    }
+   
 }
