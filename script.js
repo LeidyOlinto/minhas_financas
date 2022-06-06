@@ -19,10 +19,10 @@ function desenhaTabela() {
         linhasTransacao += `
             <tr>
                 <td>${linha.tipo} ${linha.nome}</td>  
-                <td class="valor">R$ ${linha.valor.toLocaleString('pt-BR',{minimumFractionDigits:2})}</td>
+                <td class="valor">R$ ${linha.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</td>
             </tr>
         `;
-        total += parseFloat((linha.valor).replace(',','.')) * (linha.tipo == '-' ? -1 : 1)
+        total += parseFloat((linha.valor).replace(/\./g, '').replace(',', '.')) * (linha.tipo == '-' ? -1 : 1)
     }
     totalSemsinal = total * (total >= 0 ? 1 : -1)
     if (transacoes.length == 0) {
@@ -44,7 +44,7 @@ function desenhaTabela() {
                 <tr>
                     <td class="total-esquerda">Total</td>
                     <td class="valor-final">
-                        R$ ${totalSemsinal.toLocaleString('pt-BR',{minimumFractionDigits:2})}
+                        R$ ${totalSemsinal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                         </br>
             `
         if (total > 0) {
@@ -64,8 +64,7 @@ function limparDados() {
     let userConfirm = confirm("Deseja mesmo remover todas as transações?");
     if (userConfirm == true) {
         transacoes = [];
-        localStorage.setItem("transacoes", JSON.stringify([
-        ]))
+        localStorage.setItem("transacoes", JSON.stringify([]))
         linhasTransacao = ``;
         totalString = ``;
         document.querySelector('table').innerHTML = '';
@@ -84,23 +83,23 @@ function addItem(item) {
     localStorage.setItem("transacoes", JSON.stringify(transacoes));
 }
 //Aqui fecha a aba do modal para telas de tablete e celular.
-function fechaModal(){
+function fechaModal() {
     document.getElementsByClassName('modal-fechar')[0].style.display = 'none';
 }
-function abreModal(){
+function abreModal() {
     document.getElementsByClassName('modal-fechar')[0].style.display = 'block';
 }
 //mascara do input "valor" em regex.
-function mask(){
-    meuInput = document.getElementById('valor').value
-    //if;para aplicar a regra so se um numero aparecer.
-    if(meuInput!=''){
-        meuInput = (meuInput).replace(/[^0-9]+/gi, '')
-        meuInput = (meuInput).replace(/([0-9][0-9])$/gi, ',$1')
-        meuInput = parseFloat((meuInput).replace(',','.')).toLocaleString('pt-BR',{minimumFractionDigits:2})
-        
-        document.getElementById('valor').value = (meuInput)
-      console.log(meuInput)
-    }
-   
+
+
+function mask(event) {
+    const val = event.target.value
+        .replace(/\D/g, '')
+        .replace(/^0*/, '')
+        .padStart(3, '0');
+
+    event.target.value =
+        val.slice(0, -2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') +
+        ',' +
+        val.slice(-2);
 }
